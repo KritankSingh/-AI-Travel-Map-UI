@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Travel Map UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="map-container">
+    <svg id="travel-map" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" aria-label="Fantasy Travel Map">
+      <!-- Map background -->
+      <rect width="800" height="600" fill="url(#mapGradient)" />
+      <defs>
+        <radialGradient id="mapGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#a3d9a5" />
+          <stop offset="100%" stop-color="#4a7c59" />
+        </radialGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%" >
+          <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00ffcc" flood-opacity="0.7"/>
+        </filter>
+      </defs>
+
+      <!-- Example locations with pulsing markers -->
+      <circle class="marker" cx="150" cy="200" r="12" tabindex="0" aria-label="Location: Mystic Forest" />
+      <circle class="marker" cx="400" cy="350" r="12" tabindex="0" aria-label="Location: Crystal Lake" />
+      <circle class="marker" cx="650" cy="150" r="12" tabindex="0" aria-label="Location: Dragon's Peak" />
+      <circle class="marker" cx="300" cy="500" r="12" tabindex="0" aria-label="Location: Sunken Ruins" />
+    </svg>
+  </div>
+
+  <div id="slideout-panel" class="closed" aria-hidden="true" role="region" aria-label="Quest Details Panel">
+    <button id="close-panel" aria-label="Close Quest Details">&times;</button>
+    <div id="quest-details">
+      <h2 id="quest-title">Quest Title</h2>
+      <p id="quest-description">Quest description will appear here.</p>
+      <div id="quest-animation"></div>
+    </div>
+  </div>
+
+  <div id="compass">
+    <div id="compass-needle"></div>
+    <div id="compass-base"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
